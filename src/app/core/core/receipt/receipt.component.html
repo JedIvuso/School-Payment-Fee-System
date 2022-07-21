@@ -1,0 +1,101 @@
+<nz-layout>
+  <!-- Sidenav starts -->
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <div class="logo">
+      <a routerLink="/home"><img src="\assets\Images\Logo.png" width="50px" height="50px" alt="Logo"  class="img-fluid"></a>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-menu-item>
+        <i nz-icon nzType="dashboard" nzTheme="outline"></i>
+        <span routerLink="" routerLinkActive="active-link">Dashboard</span>
+      </li>
+      <li nz-menu-item>
+        <i nz-icon nzType="wallet" nzTheme="outline"></i>
+        <span routerLink="/fee-payment" routerLinkActive="active-link">Fee-Payment</span>
+      </li>
+      <li nz-menu-item>
+        <i nz-icon nzType="pie-chart" nzTheme="outline"></i>
+        <span routerLink="/fee-statement" routerLinkActive="active-link">Fee-Statement</span>
+      </li>
+      <li nz-submenu nzTitle="Mini-Statement" nzIcon="bars">
+        <ul>
+          <li nz-menu-item routerLink="/fee-structure" routerLinkActive="active-link">Fee-Structure</li>
+          <li nz-menu-item routerLink="" routerLinkActive="active-link">Receipt</li>
+        </ul>
+      </li>
+
+      <!--<li nz-menu-item>
+            <i nz-icon nzType="file"></i>
+            <span>File</span>
+          </li>-->
+
+    </ul>
+  </nz-sider>
+  <!-- Sidenav ends -->
+
+  <nz-layout>
+    <!-- Navbar starts -->
+    <nz-header>
+      <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        (click)="isCollapsed = !isCollapsed">
+      </i>
+
+      <div class="row mt-2 ml-auto">
+        <div class="d-flex">
+          <button class="btn" data-bs-toggle="" aria-expanded="false">
+            <i nz-icon nzType="bell" nzTheme="outline"></i>
+          </button>
+          <div class="profile-logo dropdown ms-auto">
+            <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <i nz-icon nzType="user" nzTheme="outline"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-dark">
+              <li>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="dropdown-item">
+                  <i nz-icon nzType="user" nzTheme="outline"></i>Your Profile
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <a href="#" class="dropdown-item">
+                  <i nz-icon nzType="export" nzTheme="outline"></i>Log Out
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nz-header>
+    <!-- Navbar ends -->
+
+    <nz-content>
+      <nz-breadcrumb>
+        <nz-breadcrumb-item>Receipt</nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <div class="inner-content">...</div>
+    </nz-content>
+    <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+  </nz-layout>
+</nz-layout>
+
+<!-- modal starts -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel">My Profile</h1>
+        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal ends -->
