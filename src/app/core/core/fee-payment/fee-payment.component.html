@@ -7,20 +7,20 @@
     <ul nz-menu nzTheme="dark" nzMode="inline">
       <li nz-menu-item>
         <i nz-icon nzType="dashboard" nzTheme="outline"></i>
-        <span routerLink="/home" routerLinkActive="active-link">Dashboard</span>
+        <span  cNavLink routerLink="/home" routerLinkActive="active-link">Dashboard</span>
       </li>
       <li nz-menu-item>
         <i nz-icon nzType="wallet" nzTheme="outline"></i>
-        <span routerLink="" routerLinkActive="active-link">Fee-Payment</span>
+        <span  cNavLink routerLink="" routerLinkActive="active-link">Fee-Payment</span>
       </li>
       <li nz-menu-item>
         <i nz-icon nzType="pie-chart" nzTheme="outline"></i>
-        <span routerLink="/fee-statement" routerLinkActive="active-link">Fee-Statement</span>
+        <span  cNavLink routerLink="/fee-statement" routerLinkActive="active-link">Fee-Statement</span>
       </li>
       <li nz-submenu nzTitle="Mini-Statement" nzIcon="bars">
         <ul>
-          <li nz-menu-item routerLink="/fee-structure" routerLinkActive="active-link">Fee-Structure</li>
-          <li nz-menu-item routerLink="/receipt" routerLinkActive="active-link">Receipt</li>
+          <li  cNavLink nz-menu-item routerLink="/fee-structure" routerLinkActive="active-link">Fee-Structure</li>
+          <li  cNavLink nz-menu-item routerLink="/receipt" routerLinkActive="active-link">Receipt</li>
         </ul>
       </li>
 

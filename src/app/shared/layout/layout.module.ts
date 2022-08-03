@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { LayoutRoutingModule } from './layout-routing.module';
-
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
@@ -16,6 +16,9 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { HomeComponent } from './home/home.component';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzTableModule } from 'ng-zorro-antd/table';
 
 
 import { NZ_ICONS } from 'ng-zorro-antd/icon';
@@ -47,6 +50,10 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NzButtonModule,
     NzSelectModule,
     NzDropDownModule,
+    NzGridModule,
+    NzDividerModule,
+    MatExpansionModule,
+    NzTableModule,
     NzIconModule.forRoot(icons),
   ],
   providers: [ { provide: NZ_I18N, useValue: en_US }, { provide: NZ_ICONS, useValue: icons } ]

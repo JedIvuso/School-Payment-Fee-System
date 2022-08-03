@@ -36,11 +36,11 @@ nz-breadcrumb {
   margin: 16px 0;
 }
 
-.inner-content {
+/* .inner-content {
   padding: 24px;
   background: #fff;
   height: 100%;
-}
+} */
 
 nz-footer {
   text-align: center;
@@ -92,4 +92,68 @@ div.modal-footer button:hover {
 
 h1 {
   margin: 0;
+}
+h2{
+  margin-top: 5px;
+}
+
+nz-divider {
+  color: #333;
+  font-weight: normal;
+}
+.inner-box {
+  background: rgba(31, 146, 204, 1);
+  padding: 20px;
+  height: 120px;
+  border-radius: 10px;
+  box-shadow: 5px 10px 20px #888888;
+  font-size: 15px;
+}
+
+.space{
+  padding-top: 7px;
+}
+
+.break{
+  padding-top: 1cm;
+  font-size: 20px;
+}
+
+mat-accordion{
+  margin: 50px;
+}
+
+mat-expansion-panel{
+  margin-bottom: 10px;
+}
+
+.gutter-row{
+  margin-bottom: 10px;
+}
+
+.button1{
+  padding: 5px 10px;
+  background-color: rgba(79, 169, 121, 0.3);
+  font-size: 10px;
+  border-radius: 10px;
+  color: #4FA979;
+}
+
+.button2{
+  margin-left: 100px;
+}
+
+tbody {
+  border-spacing: 10px;
+}
+
+.inner-content{
+  margin: 0px 100px;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
 }
