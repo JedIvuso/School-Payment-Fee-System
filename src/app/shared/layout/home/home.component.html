@@ -44,7 +44,7 @@
       <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
         (click)="isCollapsed = !isCollapsed">
       </i>
-        
+
       <div class="row mt-2 ml-auto">
         <div class="d-flex">
           <button class="btn" data-bs-toggle="" aria-expanded="false">
@@ -72,7 +72,7 @@
           </div>
         </div>
       </div>
-      
+
     </nz-header>
     <!-- Navbar ends -->
 
@@ -86,10 +86,15 @@
         <nz-divider nzOrientation="left" nzText="Dependants"></nz-divider>
         <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
           <div nz-col class="gutter-row" [nzSpan]="6">
-            <div class="inner-box" style="color: white;">Riara high school <div class="space">17G01ABT006</div> <div class="space">Form III</div></div>
+            <div class="inner-box" style="color: white;">Riara high school <div class="space">17G01ABT006</div>
+              <div class="space">Form III</div>
+            </div>
           </div>
           <div nz-col class="gutter-row" [nzSpan]="6">
-            <div style="background-color: white;" class="inner-box">Fee Paid <div class="break"><strong>KSH 10,000</strong></div></div>
+            <div style="background-color: white;" class="inner-box">Fee Paid
+              <div class="break"><strong>KSH 10,000</strong><img src="\assets\Images\take-my-money-svgrepo-com.svg"
+                width="30px" height="30px" alt="Logo" class="img-fluid"class="float-end"></div>
+            </div>
           </div>
           <div nz-col class="gutter-row" [nzSpan]="12">
             <div style="background-color: white;" class="inner-box">col-6</div>

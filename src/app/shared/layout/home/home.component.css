@@ -161,3 +161,17 @@ tbody {
 .down{
   margin-top: 13cm;
 }
+
+.img-fluid{
+  display: inline;
+}
+
+/* div.relative {
+  position: relative;
+}
+
+div.absolute {
+  position: absolute;
+  top: 80px;
+  right: 0;
+} */
