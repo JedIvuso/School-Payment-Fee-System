@@ -193,7 +193,7 @@ a:hover {
 .navbar .nav-item.dropdown.show .nav-link,
 .navbar .nav-item .nav-link:hover,
 .navbar .nav-item .nav-link.active {
-    color: #0092ff;
+    color: #1F92CC;
 }
 
 /* Dropdown Menu */
@@ -309,6 +309,7 @@ a:hover {
 .cards-2 .card-body {
 	padding: 3.5rem 2rem 3.125rem 2rem;
 }
+
 
 
 /*********************/
