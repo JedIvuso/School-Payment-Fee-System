@@ -2,32 +2,35 @@
   <!-- Sidenav starts -->
   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
     <div class="logo">
-      <a routerLink="/home"><img src="\assets\Images\Logo.png" width="50px" height="50px" alt="Logo"  class="img-fluid"></a>
+      <a routerLink="/home"><img src="\assets\Images\Logo.png" width="50px" height="50px" alt="Logo"
+          class="img-fluid"></a>
     </div>
-    <ul nz-menu nzTheme="dark" nzMode="inline">
-      <li nz-menu-item>
+    <ul nz-menu nzTheme="light" nzMode="inline">
+      <li nz-menu-item style="color: black;" cNavLink routerLink="" routerLinkActive="active-link">
         <i nz-icon nzType="dashboard" nzTheme="outline"></i>
-        <span  cNavLink routerLink="/home" routerLinkActive="active-link">Dashboard</span>
+        <span>Dashboard</span>
       </li>
-      <li nz-menu-item>
+      <li nz-menu-item style="color: black;" cNavLink routerLink="/fee-payment" routerLinkActive="active-link">
         <i nz-icon nzType="wallet" nzTheme="outline"></i>
-        <span  cNavLink routerLink="" routerLinkActive="active-link">Fee-Payment</span>
+        <span>Fee-Payment</span>
       </li>
-      <li nz-menu-item>
+      <li nz-menu-item style="color: black;" cNavLink routerLink="/fee-statement" routerLinkActive="active-link">
         <i nz-icon nzType="pie-chart" nzTheme="outline"></i>
-        <span  cNavLink routerLink="/fee-statement" routerLinkActive="active-link">Fee-Statement</span>
+        <span>Fee-Statement</span>
       </li>
-      <li nz-submenu nzTitle="Mini-Statement" nzIcon="bars">
-        <ul>
-          <li  cNavLink nz-menu-item routerLink="/fee-structure" routerLinkActive="active-link">Fee-Structure</li>
-          <li  cNavLink nz-menu-item routerLink="/receipt" routerLinkActive="active-link">Receipt</li>
-        </ul>
+      <li nz-menu-item style="color: black;" cNavLink routerLink="/transactions" routerLinkActive="active-link">
+        <i nz-icon nzType="transaction" nzTheme="outline"></i>
+        <span>Transactions</span>
+      </li>
+      <li nz-menu-item class="down" style="color: black;" cNavLink routerLink="" routerLinkActive="active-link">
+        <i nz-icon nzType="setting" nzTheme="outline"></i>
+        <span>Settings</span>
       </li>
 
       <!--<li nz-menu-item>
-            <i nz-icon nzType="file"></i>
-            <span>File</span>
-          </li>-->
+              <i nz-icon nzType="file"></i>
+              <span>File</span>
+            </li>-->
 
     </ul>
   </nz-sider>
@@ -42,16 +45,16 @@
 
       <div class="row mt-2 ml-auto">
         <div class="d-flex">
-          <button class="btn" data-bs-toggle="" aria-expanded="false">
+          <button class="btn" data-bs-toggle="" aria-expanded="false" aria-label="notification">
             <i nz-icon nzType="bell" nzTheme="outline"></i>
           </button>
           <div class="profile-logo dropdown ms-auto">
-            <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="profile">
               <i nz-icon nzType="user" nzTheme="outline"></i>
             </button>
             <ul class="dropdown-menu dropdown-dark">
               <li>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="dropdown-item">
+                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="dropdown-item">
                   <i nz-icon nzType="user" nzTheme="outline"></i>Your Profile
                 </a>
               </li>
@@ -59,7 +62,7 @@
                 <hr class="dropdown-divider">
               </li>
               <li>
-                <a href="#" class="dropdown-item">
+                <a class="dropdown-item" routerLink="/landingpage">
                   <i nz-icon nzType="export" nzTheme="outline"></i>Log Out
                 </a>
               </li>
@@ -71,34 +74,90 @@
     <!-- Navbar ends -->
 
     <nz-content>
-      <nz-breadcrumb>
+      <!-- <nz-breadcrumb>
         <nz-breadcrumb-item>Fee-Payment</nz-breadcrumb-item>
-      </nz-breadcrumb>
+      </nz-breadcrumb> -->
       <div class="inner-content">
-        <h1>1. Select Payment Channel</h1>
-        <div class="d-flex justify-content-between mt-3">
-          <a data-bs-toggle="modal" data-bs-target="#mpesamodal"><img
-              src="\assets\Images\M-PESA_LOGO.png" alt="M-Pesa" width="200px" height="200px" class="img-fluid">
-            <p>Safaricom: M-Pesa</p>
-          </a>
-          <a data-bs-toggle="modal" data-bs-target="#airtelmodal"><img
-              src="\assets\Images\airtel-money.png" alt="Airtel Money" width="200px" height="200px" class="img-fluid">
-            <p>Airtel: Airtel Money</p>
-          </a>
-        </div>
-        <div class="d-flex justify-content-between mt-3">
-          <a data-bs-toggle="modal" data-bs-target="#telkommodal"><img src="\assets\Images\t-kash.png"
-              alt="T-Kash" width="200px" height="200px" class="img-fluid">
-            <p>Telkom: T-kash</p>
-          </a>
-          <a data-bs-toggle="modal" data-bs-target="#bankmodal"><img src="\assets\Images\Bank.png"
-              alt="T-Kash" width="200px" height="200px" class="img-fluid">
-            <p>Bank</p>
-          </a>
+        <h2>1. Select Payment Method</h2>
+        <!-- <nz-breadcrumb>
+          <nz-breadcrumb-item>Dashboard</nz-breadcrumb-item>
+        </nz-breadcrumb> -->
+        <p style="display: inline;">Bank Accounts</p>
+        <h2 style="margin-left: 13.5cm; display:inline;">2. Fill out form</h2>
+        <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+          <div nz-col class="gutter-row" [nzSpan]="6">
+            <div class="inner-box"><img src="\assets\Images\kcb-logo.png" width="30px" height="30px" alt="kcb-Logo"
+                class="img-fluid" class="float-start">
+              <div class="space">17G01ABT006</div>
+              <div class="space">Form III</div>
+            </div>
+          </div>
+          <div nz-col class="gutter-row" [nzSpan]="6">
+            <div style="background-color: white;" class="inner-box">Fee Paid
+              <div class="break"><strong>KSH 10,000</strong><img src="\assets\Images\take-my-money-svgrepo-com.svg"
+                  width="30px" height="30px" alt="Logo" class="img-fluid" class="float-end"></div>
+            </div>
+          </div>
+
+          <div class="flex-container">
+            <p>Mobile Money</p>
+            <a data-bs-toggle="modal" data-bs-target="#mpesamodal"><img src="\assets\Images\mpesakenya.jpg"
+                alt="M-PESA"></a>
+            <a data-bs-toggle="modal" data-bs-target="#airtelmodal"><img src="\assets\Images\airtelkenya.jpg"
+                alt="AIRTEL"></a>
+            <a data-bs-toggle="modal" data-bs-target="#telkommodal"><img src="\assets\Images\t-kash.png"
+                alt="TELKOM"></a>
+          </div>
+
+          <div class="row1">
+            <div class="col-75">
+              <div class="container1">
+                <form action="/action_page.php">
+
+                  <div class="row1">
+
+                    <div class="col-50">
+                      <!-- <h3>Payment</h3>
+                      <label for="fname">Accepted Cards</label>
+                      <div class="icon-container">
+                        <i class="fa fa-cc-visa" style="color:navy;"></i>
+                        <i class="fa fa-cc-amex" style="color:blue;"></i>
+                        <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                        <i class="fa fa-cc-discover" style="color:orange;"></i>
+                      </div> -->
+                      <label for="schoolcode">School Code</label>
+                      <input type="text" id="schoolcode" name="code">
+                      <label for="regno">Student's Reg No.</label>
+                      <input type="text" id="regno" name="regno">
+                      <label for="number">Phone Number</label>
+                      <input type="text" id="number" name="number">
+                      <label for="amount">Amount</label>
+                      <input type="text" id="amount" name="amount">
+                      <!-- <div class="row1">
+                        <div class="col-50">
+                          <label for="expyear">Exp Year</label>
+                          <input type="text" id="expyear" name="expyear" placeholder="2018">
+                        </div>
+                        <div class="col-50">
+                          <label for="cvv">CVV</label>
+                          <input type="text" id="cvv" name="cvv" placeholder="352">
+                        </div>
+                      </div> -->
+                    </div>
+
+                  </div>
+                  <!-- <label>
+                    <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                  </label> -->
+                  <input type="submit" value="Proceed" class="btn1">
+                </form>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </nz-content>
-    <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
   </nz-layout>
 </nz-layout>
 
@@ -111,7 +170,40 @@
         <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+
+        <form nz-form>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="FirstName">First Name</nz-form-label>
+            <nz-form-control [nzSpan]="9">
+              <input type="text" nz-input formControlName="firstName" />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="LastName">Last Name</nz-form-label>
+            <nz-form-control [nzSpan]="9">
+              <input type="text" nz-input formControlName="LastName" />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="email">Email Address</nz-form-label>
+            <nz-form-control [nzSpan]="9">
+              <input type="text" nz-input formControlName="email" />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="contactNumber">Phone No.</nz-form-label>
+            <nz-form-control [nzSpan]="9">
+              <input type="text" nz-input formControlName="contactNumber" />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="idNumber">ID No.</nz-form-label>
+            <nz-form-control [nzSpan]="9">
+              <input type="text" nz-input formControlName="idNumber" />
+            </nz-form-control>
+          </nz-form-item>
+        </form>
+
       </div>
       <div class="modal-footer">
         <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -128,6 +220,9 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title">2. Enter Details</h1>
+        <div class="d-flex flex-row justify-content-around">
+          <div class="mpesa"><span>Mpesa </span></div>
+        </div>
         <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -175,6 +270,9 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title">2. Enter Details</h1>
+        <div class="d-flex flex-row justify-content-around">
+          <div class="airtel"><span>Airtel </span></div>
+        </div>
         <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -222,6 +320,9 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title">2. Enter Details</h1>
+        <div class="d-flex flex-row justify-content-around">
+          <div class="tkash"><span>T-kash </span></div>
+        </div>
         <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

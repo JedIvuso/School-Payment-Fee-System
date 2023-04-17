@@ -274,7 +274,7 @@ a:hover {
 
 
 /************************/
-/*     Testimonials     */
+/*     Features     */
 /************************/
 .cards-2 {
 	padding-top: 9.5rem;
@@ -386,6 +386,12 @@ a:hover {
 .ex-cards-1 .card {
     border: none;
     background-color: transparent;
+}
+
+.link a{
+    color: #1F92CC;
+    margin-left: 5px;
+    font-size: 1rem;
 }
 
 
@@ -551,7 +557,7 @@ a:hover {
 
     /* end of services */
 
-    	/* Testimonials */
+    	/* Features */
 	.cards-2 .card {
 		display: inline-block;
 		width: 298px;
@@ -562,7 +568,7 @@ a:hover {
 		margin-right: 1rem;
 		margin-left: 1rem;
 	}
-	/* end of testimonials */
+	/* end of features */
 
     /* Copyright */
     .copyright {

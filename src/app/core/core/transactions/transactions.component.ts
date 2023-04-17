@@ -1,10 +1,7 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 
 interface ParentItemData {
   key: number;
@@ -25,9 +22,9 @@ interface ChildrenItemData {
 }
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  selector: 'app-transactions',
+  templateUrl: './transactions.component.html',
+  styleUrls: ['./transactions.component.css'],
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({height: '0px', minHeight: '0'})),
@@ -36,23 +33,13 @@ interface ChildrenItemData {
     ]),
   ],
 })
-export class HomeComponent implements OnInit{
+export class TransactionsComponent implements OnInit{
   isCollapsed = false;
   listOfParentData: ParentItemData[] = [];
   listOfChildrenData: ChildrenItemData[] = [];
-  public registerForm! : FormGroup;
-
-  constructor(private formBuilder : FormBuilder, private http : HttpClient, private router:Router) {}
 
   ngOnInit(): void {
-    this.registerForm = this.formBuilder.group({
-      firstName:['',Validators.required],
-      lastName:['',Validators.required],
-      email:['',Validators.required],
-      contactNumber:['',Validators.required],
-      idNumber:['',Validators.required]
-    })
-    for (let i = 0; i < 4; ++i) {
+    for (let i = 0; i < 8; ++i) {
       this.listOfParentData.push({
         key: i,
         contributor: 'Screem',
@@ -76,22 +63,24 @@ export class HomeComponent implements OnInit{
 }
 
 
-  // title = 'angularmaterial';
+    
 
-  //Columns names, table data from datasource, pagination and sorting
+//   ngOnInit() {
+//     this.dataSource.paginator = this.paginator;
+    
+//   }
+//   title = 'angularmaterial';
+
+//   Columns names, table data from datasource, pagination and sorting
 
 //   columnsToDisplay: string[] = ['Contributor', 'Amount', 'Status', 'Date', 'Payment Method'];
 //   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 //   @ViewChild(MatPaginator, {static: true}) paginator:any = MatPaginator;
 //   expandedElement: PeriodicElement | null | undefined;
 //   columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
-//   ngOnInit() {
-//     this.dataSource.paginator = this.paginator;
-    
-//   }
 // }
 
-//Columns data types
+// Columns data types
 
 // export interface PeriodicElement {
 //   Contributor: string;

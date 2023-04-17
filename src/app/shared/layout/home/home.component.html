@@ -5,28 +5,26 @@
       <a routerLink="/home"><img src="\assets\Images\Logo.png" width="50px" height="50px" alt="Logo"
           class="img-fluid"></a>
     </div>
-    <ul nz-menu nzTheme="dark" nzMode="inline">
-      <li nz-menu-item>
+    <ul nz-menu nzTheme="light" nzMode="inline">
+      <li nz-menu-item style="color: black;" cNavLink routerLink="" routerLinkActive="active-link">
         <i nz-icon nzType="dashboard" nzTheme="outline"></i>
-        <span cNavLink routerLink="" routerLinkActive="active-link">Dashboard</span>
+        <span>Dashboard</span>
       </li>
-      <li nz-menu-item>
+      <li nz-menu-item style="color: black;" cNavLink routerLink="/fee-payment" routerLinkActive="active-link">
         <i nz-icon nzType="wallet" nzTheme="outline"></i>
-        <span cNavLink routerLink="/fee-payment" routerLinkActive="active-link">Fee-Payment</span>
+        <span>Fee-Payment</span>
       </li>
-      <li nz-menu-item>
+      <li nz-menu-item style="color: black;" cNavLink routerLink="/fee-statement" routerLinkActive="active-link">
         <i nz-icon nzType="pie-chart" nzTheme="outline"></i>
-        <span cNavLink routerLink="/fee-statement" routerLinkActive="active-link">Fee-Statement</span>
+        <span>Fee-Statement</span>
       </li>
-      <li nz-submenu nzTitle="Mini-Statement" nzIcon="bars">
-        <ul>
-          <li cNavLink nz-menu-item routerLink="/fee-structure" routerLinkActive="active-link">Fee-Structure</li>
-          <li cNavLink nz-menu-item routerLink="/receipt" routerLinkActive="active-link">Receipt</li>
-        </ul>
+      <li nz-menu-item style="color: black;" cNavLink routerLink="/transactions" routerLinkActive="active-link">
+        <i nz-icon nzType="transaction" nzTheme="outline"></i>
+        <span>Transactions</span>
       </li>
-      <li nz-menu-item class="down">
+      <li nz-menu-item class="down" style="color: black;" cNavLink routerLink="" routerLinkActive="active-link">
         <i nz-icon nzType="setting" nzTheme="outline"></i>
-        <span cNavLink routerLink="" routerLinkActive="active-link">Settings</span>
+        <span>Settings</span>
       </li>
 
       <!--<li nz-menu-item>
@@ -47,16 +45,16 @@
 
       <div class="row mt-2 ml-auto">
         <div class="d-flex">
-          <button class="btn" data-bs-toggle="" aria-expanded="false">
+          <button class="btn" data-bs-toggle="" aria-expanded="false" aria-label="notification">
             <i nz-icon nzType="bell" nzTheme="outline"></i>
           </button>
           <div class="profile-logo dropdown ms-auto">
-            <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="profile">
               <i nz-icon nzType="user" nzTheme="outline"></i>
             </button>
             <ul class="dropdown-menu dropdown-dark">
               <li>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="dropdown-item">
+                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="dropdown-item">
                   <i nz-icon nzType="user" nzTheme="outline"></i>Your Profile
                 </a>
               </li>
@@ -64,7 +62,7 @@
                 <hr class="dropdown-divider">
               </li>
               <li>
-                <a href="#" class="dropdown-item">
+                <a class="dropdown-item" routerLink="/landingpage">
                   <i nz-icon nzType="export" nzTheme="outline"></i>Log Out
                 </a>
               </li>
@@ -83,7 +81,17 @@
         <!-- <nz-breadcrumb>
           <nz-breadcrumb-item>Dashboard</nz-breadcrumb-item>
         </nz-breadcrumb> -->
-        <nz-divider nzOrientation="left" nzText="Dependants"></nz-divider>
+        <nz-breadcrumb>
+          <nz-breadcrumb-item>Dependant > <div class="dropdown">
+              <a style="color: rgba(31, 146, 204, 1);" class="dropdown-toggle">Jonathan K</a>
+              <div class="dropdown-content">
+                <a href="#"></a>
+                <a data-bs-toggle="modal" data-bs-target="#dependant" style="color: rgba(31, 146, 204, 1);"><span
+                    nz-icon nzType="plus-circle" nzTheme="outline"></span> Add More</a>
+              </div>
+            </div>
+          </nz-breadcrumb-item>
+        </nz-breadcrumb>
         <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
           <div nz-col class="gutter-row" [nzSpan]="6">
             <div class="inner-box" style="color: white;">Riara high school <div class="space">17G01ABT006</div>
@@ -93,44 +101,89 @@
           <div nz-col class="gutter-row" [nzSpan]="6">
             <div style="background-color: white;" class="inner-box">Fee Paid
               <div class="break"><strong>KSH 10,000</strong><img src="\assets\Images\take-my-money-svgrepo-com.svg"
-                width="30px" height="30px" alt="Logo" class="img-fluid"class="float-end"></div>
+                  width="30px" height="30px" alt="Logo" class="img-fluid" class="float-end"></div>
             </div>
           </div>
           <div nz-col class="gutter-row" [nzSpan]="12">
-            <div style="background-color: white;" class="inner-box">col-6</div>
+            <div style="background-color: white;" class="inner-box">Statistics > </div>
           </div>
         </div>
 
 
         <nz-divider nzOrientation="left" nzText="Previous Transactions"></nz-divider>
 
-        <nz-table #fixedTable [nzData]="listOfData" nzTableLayout="fixed">
+        <nz-table #nestedTable [nzData]="listOfParentData" [nzPageSize]="10">
           <thead>
             <tr>
+              <th></th>
               <th>Contributor</th>
               <th>Amount</th>
               <th>Status</th>
               <th>Date</th>
-              <th nzEllipsis>Payment Method</th>
+              <th>Payment Method</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let data of fixedTable.data">
-              <td>{{ data.contributor }}</td>
+            <ng-template ngFor let-data [ngForOf]="nestedTable.data">
+              <tr>
+                <td [(nzExpand)]="data.expand"></td>
+                <td>{{ data.contributor }}</td>
+                <td>{{ data.amount }}</td>
+                <td><button class="button1" type="button">{{
+                    data.status }}</button></td>
+                <td>{{ data.date }}</td>
+                <td>{{ data.paymentmethod }}</td>
+              </tr>
+              <tr [nzExpand]="data.expand">
+                <nz-table #innerTable [nzData]="listOfChildrenData" nzSize="middle" [nzShowPagination]="false">
+                  <thead>
+                    <tr>
+                      <th>Status</th>
+                      <th>Ref No.</th>
+                      <th>Student Reg No.</th>
+                      <th>Amount</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+          <tbody>
+            <tr *ngFor="let data of innerTable.data">
+              <td>
+                <nz-badge [nzStatus]="'success'" [nzText]="'Finished'"></nz-badge>
+              </td>
+              <td>{{ data.refno }}</td>
+              <td>{{ data.studentregno }}</td>
               <td>{{ data.amount }}</td>
-              <td nzEllipsis><button class="button1" type="button">{{ data.status }}</button></td>
-              <td nzEllipsis>{{ data.date }}</td>
-              <td nzEllipsis>{{ data.paymentmethod }}<button id="collapsible" class="button2" type="button"><i nz-icon
-                    nzType="down"></i></button></td>
-              <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat.</p>
-              </div>
-
+              <td>
+                <span class="table-operation">
+                  <a class="operation"><i nz-icon nzType="send" nzTheme="outline"></i></a>
+                  <!-- <a nz-dropdown class="operation" [nzDropdownMenu]="menu">
+                              Pause
+                              <i nz-icon nzType="down"></i>
+                          </a>
+                          <nz-dropdown-menu #menu="nzDropdownMenu">
+                              <ul nz-menu>
+                                  <li nz-menu-item>
+                                      <a>Action 1</a>
+                                  </li>
+                                  <li nz-menu-item>
+                                      <a>Action 2</a>
+                                  </li>
+                              </ul>
+                          </nz-dropdown-menu> -->
+                  <nz-divider nzType="vertical"></nz-divider>
+                  <a class="operation"><i nz-icon nzType="download" nzTheme="outline"></i></a>
+                  <!-- <nz-divider nzType="vertical"></nz-divider>
+                          <a>More</a> -->
+                </span>
+              </td>
             </tr>
           </tbody>
         </nz-table>
+        </tr>
+        </ng-template>
+        </tbody>
+        </nz-table>
+
       </div>
     </nz-content>
 
@@ -146,7 +199,40 @@
         <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+
+        <form nz-form>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="FirstName">First Name</nz-form-label>
+            <nz-form-control [nzSpan]="9">
+              <input type="text" nz-input formControlName="firstName" />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="LastName">Last Name</nz-form-label>
+            <nz-form-control [nzSpan]="9">
+              <input type="text" nz-input formControlName="LastName" />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="email">Email Address</nz-form-label>
+            <nz-form-control [nzSpan]="9">
+              <input type="text" nz-input formControlName="email" />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="contactNumber">Phone No.</nz-form-label>
+            <nz-form-control [nzSpan]="9">
+              <input type="text" nz-input formControlName="contactNumber" />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="idNumber">ID No.</nz-form-label>
+            <nz-form-control [nzSpan]="9">
+              <input type="text" nz-input formControlName="idNumber" />
+            </nz-form-control>
+          </nz-form-item>
+        </form>
+
       </div>
       <div class="modal-footer">
         <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -156,3 +242,35 @@
   </div>
 </div>
 <!-- modal ends -->
+
+
+<!-- dependant addition starts -->
+<div class="modal fade" id="dependant" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title">Enter Detail</h1>
+        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form nz-form>
+
+          <nz-form-item>
+            <nz-form-label [nzSpan]="10" nzRequired nzFor="regno">Student's Registration No</nz-form-label>
+            <nz-form-control [nzSpan]="9">
+              <input type="text" nz-input formControlName="registrationNo" />
+            </nz-form-control>
+          </nz-form-item>
+
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-primary">Add Dependant</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- dependant addition ends -->

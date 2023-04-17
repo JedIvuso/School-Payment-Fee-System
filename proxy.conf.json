@@ -1,0 +1,6 @@
+{
+    "/api": {
+      "target": "https://schoolsapplication.herokuapp.com",
+      "secure": false
+    }
+  }

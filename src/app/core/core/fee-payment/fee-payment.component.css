@@ -7,7 +7,7 @@
 }
 
 .trigger:hover {
-  color: #1890ff;
+  color: white;
 }
 
 .logo {
@@ -16,14 +16,22 @@
   margin: 16px;
 }
 
+.down{
+  margin-top: 13cm;
+}
+
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
+nz-sider{
+  background: white;
+}
+
 nz-header {
-  background: #fff;
+  background: rgba(31, 146, 204, 1);
   padding: 0;
   position: relative;
 }
@@ -38,7 +46,7 @@ nz-breadcrumb {
 
 .inner-content {
   padding: 24px;
-  background: #fff;
+  margin: 0px 100px;
   height: 100%;
 }
 
@@ -61,7 +69,7 @@ nz-layout {
 }
 
 .btn:hover {
-  color: #1890ff;
+  color: white;
 }
 
 .row {
@@ -92,4 +100,173 @@ div.modal-footer button:hover {
 
 h1 {
   margin: 0;
+}
+
+/* Inner box starts */
+.inner-box {
+  padding: 20px;
+  height: 130px;
+  border-radius: 10px;
+  box-shadow: 5px 10px 20px #888888;
+  font-size: 15px;
+}
+
+.gutter-row{
+  margin-bottom: 10px;
+}
+
+.space{
+  padding-top: 7px;
+}
+
+.break{
+  padding-top: 1cm;
+  font-size: 20px;
+}
+/* Inner Box ends */
+
+/* payment form starts */
+.row1 {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container1 {
+  background-color: white;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  margin-left: 1cm;
+  box-shadow: 5px 10px 20px #888888;
+  width: 10cm;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+  display: block;
+  font-size: 12px;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn1 {
+  background-color: rgba(31, 146, 204, 1);
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn1:hover {
+  background-color: rgba(31, 146, 204, 1);
+  color: black;
+}
+
+/* a {
+  color: #2196F3;
+} */
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+.btn-group{
+  /* margin-top: 5cm; */
+  flex-wrap: wrap;
+}
+
+.flex-container{
+  margin-top: 4cm;
+  margin-left: 0.5cm;
+  position: absolute;
+}
+
+.flex-container img{
+  height: 2.5cm;
+  width: 2.5cm;
+  display: inline;
+  margin-right: 1cm;
+}
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row1 {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+/* payment form ends */
+
+
+.mpesa{
+  margin-left: 2cm;
+  background-color: green;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 20px 5px;
+  color: #fff;
+}
+
+.airtel{
+  margin-left: 2cm;
+  background-color: red;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 20px 5px;
+  color: #fff;
+}
+
+.tkash{
+  margin-left: 2cm;
+  background-color: #2185b0;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 20px 5px;
+  color: #fff;
 }

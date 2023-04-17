@@ -3,6 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { LayoutRoutingModule } from './layout-routing.module';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
@@ -19,7 +24,7 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzTableModule } from 'ng-zorro-antd/table';
-
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
 
 import { NZ_ICONS } from 'ng-zorro-antd/icon';
 import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
@@ -54,7 +59,13 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NzDropDownModule,
     NzGridModule,
     NzDividerModule,
+    NzBadgeModule,
+    BrowserAnimationsModule,
     MatExpansionModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatIconModule,
+    MatButtonModule,
     NzTableModule,
     NzIconModule.forRoot(icons),
   ],

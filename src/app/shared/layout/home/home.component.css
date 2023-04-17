@@ -7,7 +7,7 @@
 }
 
 .trigger:hover {
-  color: #1890ff;
+  color: white;
 }
 
 .logo {
@@ -22,8 +22,12 @@ img {
   margin-right: auto;
 }
 
+nz-sider{
+  background: white;
+}
+
 nz-header {
-  background: #fff;
+  background: rgba(31, 146, 204, 1);
   padding: 0;
   position: relative;
 }
@@ -61,7 +65,7 @@ nz-layout {
 }
 
 .btn:hover {
-  color: #1890ff;
+  color: white;
 }
 
 .row {
@@ -101,6 +105,20 @@ nz-divider {
   color: #333;
   font-weight: normal;
 }
+
+mat-accordion{
+  margin: 50px;
+}
+
+mat-expansion-panel{
+  margin-bottom: 10px;
+}
+
+/* Inner box starts */
+.gutter-row{
+  margin-bottom: 10px;
+}
+
 .inner-box {
   background: rgba(31, 146, 204, 1);
   padding: 20px;
@@ -118,18 +136,7 @@ nz-divider {
   padding-top: 1cm;
   font-size: 20px;
 }
-
-mat-accordion{
-  margin: 50px;
-}
-
-mat-expansion-panel{
-  margin-bottom: 10px;
-}
-
-.gutter-row{
-  margin-bottom: 10px;
-}
+/* Inner box ends */
 
 .button1{
   padding: 5px 10px;
@@ -162,9 +169,59 @@ tbody {
   margin-top: 13cm;
 }
 
-.img-fluid{
+/* .img-fluid{
   display: inline;
+} */
+
+/* Table css starts here */
+table {
+  width: 100%;
 }
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-diagram {
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+/* Table css ends here */
 
 /* div.relative {
   position: relative;
@@ -175,3 +232,34 @@ div.absolute {
   top: 80px;
   right: 0;
 } */
+
+/*Dependant css starts*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+  min-width: 50px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/*Dependant css ends*/
+

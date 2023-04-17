@@ -15,6 +15,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
@@ -76,6 +78,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     MatMenuModule,
     MatListModule,
     MatDialogModule,
+    MatPaginatorModule,
+    MatTableModule,
     DragDropModule,
     ScrollingModule,
     FormsModule,
